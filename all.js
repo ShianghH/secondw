@@ -295,32 +295,48 @@ const exerciseRecords = [
 ];
 
 // 範例：週一
-if (exerciseRecords[0].duration >= 30 && exerciseRecords[0].heartRate >= 130) {
-    totalDuration += mondayDuration = exerciseRecords[0].duration;
-    validDays += 1;
+// if (exerciseRecords[0].duration >= 30 && exerciseRecords[0].heartRate >= 130) {
+//     totalDuration += mondayDuration = exerciseRecords[0].duration;
+//     validDays += 1;
     
-}
-//週二
-if (exerciseRecords[1].duration >= 30 && exerciseRecords[1].heartRate >= 130){
-    totalDuration += tuesdayDuration = exerciseRecords[1].duratio;
-    validDays += 1;
-}
-//週三
-if (exerciseRecords[2].duration >= 30 && exerciseRecords[2].heartRate >= 130){
-    totalDuration += wednesdayDuration = exerciseRecords[2].duration;
-    validDays += 1;
-}
-//週五
-if (exerciseRecords[3].duration >= 30 && exerciseRecords[3].heartRate >= 130){
-    totalDuration += fridayDuration = exerciseRecords[2].duration;
-    validDays += 1;
-}
-//週六
-if(exerciseRecords[4].duration >= 30 && exerciseRecords[4].heartRate >= 130){
-    totalDuration += saturdayDuration = exerciseRecords[4].duration;
-    validDays += 1;
-}
+// }
+// //週二
+// if (exerciseRecords[1].duration >= 30 && exerciseRecords[1].heartRate >= 130){
+//     totalDuration += tuesdayDuration = exerciseRecords[1].duratio;
+//     validDays += 1;
+// }
+// //週三
+// if (exerciseRecords[2].duration >= 30 && exerciseRecords[2].heartRate >= 130){
+//     totalDuration += wednesdayDuration = exerciseRecords[2].duration;
+//     validDays += 1;
+// }
+// //週五
+// if (exerciseRecords[3].duration >= 30 && exerciseRecords[3].heartRate >= 130){
+//     totalDuration += fridayDuration = exerciseRecords[2].duration;
+//     validDays += 1;
+// }
+// //週六
+// if(exerciseRecords[4].duration >= 30 && exerciseRecords[4].heartRate >= 130){
+//     totalDuration += saturdayDuration = exerciseRecords[4].duration;
+//     validDays += 1;
+// }
 // 練習：週二、週三、週四、週五、週六
+
+//迴圈
+// for (初始化;條件;更新){}
+for(let i = 0; i < exerciseRecords.length; i++){
+// let i = 0：初始化變數 i，從 0 開始（表示陣列的第一個元素）
+//i < exerciseRecords.length：迴圈的條件是 i 小於 exerciseRecords 陣列的長度（即每個陣列元素都會被處理一次）。
+//i++：每次執行迴圈後，i 的值會加 1，這樣就能依次訪問陣列中的下一個元素。
+    const { day, duration, heartRate } = exerciseRecords[i];
+//exerciseRecords[i]：表示當前陣列元素（是一個物件，如 { day: 'Monday', duration: 40, heartRate: 135 }）。
+    if (duration >= 30 && heartRate >= 130) {
+    totalDuration += duration; // 累加符合條件的運動時間
+    validDays ++; // 符合條件的天數
+    }
+}
+console.log(`符合條件的總運動時間：${totalDuration} 分鐘`);
+console.log(`符合條件的運動次數：${validDays} 天`);
 
 
 // 練習：判斷是否符合 533 原則
