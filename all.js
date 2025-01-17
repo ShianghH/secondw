@@ -50,7 +50,7 @@ let BobIsVip = false; /* Bob 是否為 VIP */
 
 //練習：（可自行將下方程式碼的註解刪除，完成答題）
 if (BobPrice >= giftPriceRule || BobIsVip) {
-    giftNum -= 1;// 贈品數量減少 1
+    giftNum --;// 贈品數量減少 1
     console.log("Bob符合贈品資格");
 } else {
     console.log("沒有符合贈品資格")
@@ -79,7 +79,7 @@ let over30w = 0.2
 
 if(coachIncome<=100000){
     coachBonus=coachIncome*0.1+baseBonus // 全年業績在 10 萬以下，給 10% 獎金
-}else if(coachIncome>100000 && coachIncome<=300000){
+}else if(coachIncome<=300000){
     coachBonus=coachIncome*0.15+baseBonus // 全年業績超過 10 萬 ~ 30 萬以下，給 15% 獎金
 }else if(coachIncome>300000){
     coachBonus=coachIncome*0.2+baseBonus // 全年業績超過 30 萬，給 20% 獎金
@@ -99,7 +99,7 @@ let playerB = '剪刀';
 
 // 練習：使用 if, else if, else 判斷輸贏
 
-if (playerA === '剪刀' && playerB === '剪刀') {
+if (playerA === playerB){
     console.log('平手');
 }else if (
     (playerA === '剪刀' && playerB === '布')||
